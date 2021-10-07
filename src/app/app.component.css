@@ -7,6 +7,10 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
+  main {
+    margin-top: 80px;
+  }
+
   h1,
   h2,
   h3,
@@ -14,6 +18,10 @@
   h5,
   h6 {
     margin: 8px 0;
+  }
+
+  h4 {
+    font-size: 1.5rem;
   }
 
   p {
@@ -29,7 +37,7 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 60px;
+    height: 80px;
     display: flex;
     align-items: center;
     background-color: #1976d2;
