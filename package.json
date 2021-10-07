@@ -9,6 +9,7 @@
     "test": "ng test"
   },
   "private": true,
+  "homepage": "https://darkunchain.github.io/angular-material/",
   "dependencies": {
     "@angular/animations": "~12.2.0",
     "@angular/cdk": "^12.2.9",
