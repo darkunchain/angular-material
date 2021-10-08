@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {MatDialog} from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ModalFormComponent } from '../modal-form/modal-form.component';
 
 
@@ -13,8 +13,20 @@ export class ModalButtonComponent {
   constructor(public dialog: MatDialog) { }
 
   openDialog() {
-    this.dialog.open(ModalFormComponent);
+
+    const dialogConfig = new MatDialogConfig();
+
+        dialogConfig.disableClose = true;
+        dialogConfig.autoFocus = true;
+
+    const dialogRef = this.dialog.open(ModalFormComponent, dialogConfig);
+
+    dialogRef.afterClosed().subscribe(
+      val => console.log("Dialog output:", val)
+    );
   }
+
+ 
 
 
 
