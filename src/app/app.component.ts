@@ -11,12 +11,8 @@ export class AppComponent implements OnInit{
   constructor(public PhotosService: PhotosService){}
   title = 'angular-material';
 
-  
+
   ngOnInit() {
-    this.PhotosService.getPhotos().subscribe(
-      photos => console.log(photos),
-      err => console.log(err)
-    )
 
   }
 }

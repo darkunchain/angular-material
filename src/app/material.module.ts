@@ -7,8 +7,10 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { ModalButtonComponent } from './components/modal-button/modal-button.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, FormBuilder } from '@angular/forms';
 import { ModalFormComponent } from './components/modal-form/modal-form.component';
+import { ReactiveFormsModule } from '@angular/forms'
+
 
 
 
@@ -23,7 +25,8 @@ import { ModalFormComponent } from './components/modal-form/modal-form.component
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
 
   ],
   exports: [
@@ -33,15 +36,18 @@ import { ModalFormComponent } from './components/modal-form/modal-form.component
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [
     TablaClientesComponent,
     ModalButtonComponent,
-  ],  
-  entryComponents: [
     ModalFormComponent,
-    ModalButtonComponent
+  ],
+  entryComponents: [
+  ],
+  providers:[
+    FormBuilder,
   ]
 })
 export class MaterialModule { }
