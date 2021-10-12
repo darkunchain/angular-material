@@ -11,17 +11,19 @@ import { Cliente } from '../../interfaces/cliente';
 })
 export class ModalButtonComponent {
 
+  /* @Input()
+  newCliente: Cliente[]; */
 
 
   constructor(public dialog: MatDialog) { }
 
-  openDialog() {
+  openDialog({nombre, telefono, tiempo}:Cliente) {
 
     const dialogConfig = new MatDialogConfig();
 
         dialogConfig.disableClose = true;
         dialogConfig.autoFocus = true;
-        dialogConfig.data = {};
+        dialogConfig.data = {nombre, telefono, tiempo};
 
     const dialogRef = this.dialog.open(ModalFormComponent, dialogConfig);
 

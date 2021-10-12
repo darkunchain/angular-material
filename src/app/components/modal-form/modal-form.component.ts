@@ -20,11 +20,16 @@ export class ModalFormComponent implements OnInit {
 
   constructor(private fb: FormBuilder,
     private dialogRef: MatDialogRef<ModalFormComponent>,
-    @Inject(MAT_DIALOG_DATA) data:Cliente) {
+    @Inject(MAT_DIALOG_DATA) {nombre,telefono,tiempo}:Cliente) {
 
 
+      this.form = fb.group({
+        nombre: [nombre, Validators.required],
+        telefono: [telefono, Validators.required],
+        tiempo: [tiempo, Validators.required],
 
-      console.log('form: ', this.form)
+    });
+
 
 
 
@@ -32,17 +37,6 @@ export class ModalFormComponent implements OnInit {
   }
 
   ngOnInit() {
-
-    this.form = this.fb.group({
-      turno: new FormControl(''),
-      password: new FormControl(''),
-      passwordRepeat: new FormControl('')
-
-  });
-
-  console.log('form: ', this.form,' - turno: ',this.fb.group)
-
-
   }
 
   save() {
