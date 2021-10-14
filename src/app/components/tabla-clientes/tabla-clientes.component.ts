@@ -1,11 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { Cliente } from 'src/app/interfaces/cliente';
 
-const ClientData: Cliente[] = [
-  {turno: 1, nombre: 'Juan Lucas Prieto Rugeles', telefono: 3002790329, tiempo: '15:00', accion: ''},
-  {turno: 2, nombre: 'Emma Prieto Rugeles', telefono: 3115761651, tiempo: '30:00', accion: ''},
-  {turno: 3, nombre: 'Luis Fernando Prieto Jimenez', telefono: 3175027179, tiempo: '15:00',accion: ''},
-];
 
 @Component({
   selector: 'app-tabla-clientes',
@@ -16,13 +12,27 @@ const ClientData: Cliente[] = [
 
 export class TablaClientesComponent implements OnInit {
 
-  displayedColumns: string[] = ['turno', 'nombre', 'telefono', 'tiempo', 'accion'];
-  dataSource = ClientData;
+  @Input() ClientData: Cliente[] = [];
+  @Input()
+  form!: FormGroup;
 
-  constructor() { }
+
+
+  displayedColumns: string[] = ['turno', 'nombre', 'telefono', 'tiempo', 'accion'];
+  dataSource = this.ClientData;
+
+
+
+
+  constructor() {}
+
+
 
 
   ngOnInit(): void {
+
   }
 
 }
+
+

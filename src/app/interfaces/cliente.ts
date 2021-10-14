@@ -1,7 +1,7 @@
 export interface Cliente {
-  turno: number;
+  turno?: number;
   nombre: string;
-  telefono: number;
+  telefono?: number;
   tiempo: string;
   accion: string;
 }

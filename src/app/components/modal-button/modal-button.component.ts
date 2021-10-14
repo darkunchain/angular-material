@@ -11,8 +11,8 @@ import { Cliente } from '../../interfaces/cliente';
 })
 export class ModalButtonComponent {
 
-  /* @Input()
-  newCliente: Cliente[]; */
+
+  newCliente: Cliente[] = [];
 
 
   constructor(public dialog: MatDialog) { }
@@ -31,5 +31,8 @@ export class ModalButtonComponent {
       data => console.log("Dialog output:", data)
     );
   }
+
+
+
 
 }

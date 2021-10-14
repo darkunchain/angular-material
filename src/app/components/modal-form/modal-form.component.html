@@ -1,29 +1,31 @@
-<h4 mat-dialog-title>
-    Dialog with elements</h4>
+<h4 mat-dialog-title>Dialog with elements</h4>
 <mat-dialog-content [formGroup]="form">
-    <mat-form-field appearance="outline">
-        <mat-label>Nombre del niño</mat-label>
-        <input matInput placeholder="Placeholder" formControlName="nombre" />
-        <mat-icon matSuffix>Escriba el nombre</mat-icon>
-        <mat-hint>Nombre</mat-hint>
+  <p>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Nombre del niño</mat-label>
+      <input matInput placeholder="Escriba nombre del niño" formControlName="nombre" />
+
+      <mat-hint>Nombre</mat-hint>
     </mat-form-field>
+  </p>
 
+  <p>
     <mat-form-field appearance="outline">
-        <mat-label>Telefono adulto responsable</mat-label>
-        <input matInput placeholder="Placeholder" formControlName="telefono" />
-        <mat-icon matSuffix>Telefono adulto responsable</mat-icon>
-        <mat-hint>Telefono</mat-hint>
+      <mat-label>Telefono adulto responsable</mat-label>
+      <input matInput placeholder="Escriba el telefono de contacto" formControlName="telefono" />
+      <mat-hint>Telefono</mat-hint>
     </mat-form-field>
+  </p>
 
-    <mat-form-field appearance="outline">
-        <button mat-button (click)="min15()">15 Min.</button>
-        <button mat-button (click)="min30()">30 Min.</button>
-        <button mat-button (click)="min60()">1 Hora</button>
+  <p>
+      <button class="mr-2" mat-button mat-raised-button color="accent" (click)="min15()">15 Min.</button>
+      <button mat-button mat-raised-button color="accent" (click)="min30()">30 Min.</button>
+      <button mat-button mat-raised-button color="accent" (click)="min60()">1 Hora</button>
+  </p>
 
-    </mat-form-field>
 
-
-    <div mat-dialog-actions>
-        <button mat-button mat-dialog-close (click)="close()">Close</button>
-        <button mat-button mat-dialog-save (click)="save()">Save</button>
-    </div>
+  <div mat-dialog-actions>
+    <button mat-button mat-dialog-close (click)="close()">Close</button>
+    <button mat-button mat-dialog-save (click)="save()">Save</button>
+  </div>
+</mat-dialog-content>

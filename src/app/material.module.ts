@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { TablaClientesComponent } from './components/tabla-clientes/tabla-clientes.component';
@@ -26,7 +27,8 @@ import { ReactiveFormsModule } from '@angular/forms'
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CommonModule
 
   ],
   exports: [
@@ -37,7 +39,8 @@ import { ReactiveFormsModule } from '@angular/forms'
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CommonModule
   ],
   declarations: [
     TablaClientesComponent,
