@@ -11,8 +11,8 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule, FormBuilder } from '@angular/forms';
 import { ModalFormComponent } from './components/modal-form/modal-form.component';
 import { ReactiveFormsModule } from '@angular/forms'
-
-
+import {MatBadgeModule} from '@angular/material/badge';
+import { NewClientService } from './services/new-client.service';
 
 
 
@@ -28,7 +28,8 @@ import { ReactiveFormsModule } from '@angular/forms'
     MatInputModule,
     FormsModule,
     ReactiveFormsModule,
-    CommonModule
+    CommonModule,
+    MatBadgeModule
 
   ],
   exports: [
@@ -40,7 +41,8 @@ import { ReactiveFormsModule } from '@angular/forms'
     MatInputModule,
     FormsModule,
     ReactiveFormsModule,
-    CommonModule
+    CommonModule,
+    MatBadgeModule
   ],
   declarations: [
     TablaClientesComponent,
@@ -51,6 +53,7 @@ import { ReactiveFormsModule } from '@angular/forms'
   ],
   providers:[
     FormBuilder,
+    NewClientService
   ]
 })
 export class MaterialModule { }

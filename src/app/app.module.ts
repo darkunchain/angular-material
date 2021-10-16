@@ -10,6 +10,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ModalFormComponent } from './components/modal-form/modal-form.component';
 import { ModalButtonComponent } from './components/modal-button/modal-button.component';
+import { NewClientService } from './services/new-client.service';
 
 @NgModule({
   declarations: [
@@ -25,8 +26,8 @@ import { ModalButtonComponent } from './components/modal-button/modal-button.com
     MaterialModule,
     HttpClientModule
   ],
-  providers: [],
-  bootstrap: [AppComponent],  
+  providers: [NewClientService],
+  bootstrap: [AppComponent],
   entryComponents: [
     ModalFormComponent,
     ModalButtonComponent

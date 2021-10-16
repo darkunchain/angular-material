@@ -6,6 +6,12 @@
     font-size: 1vw!important;
   }
 
+  .mat-badge {
+    position: absolute;
+    margin-top: 1.5rem;
+    margin-left: 3rem;
+  }
+
   .mat-icon {
     height: 2vw;
     width: 2vw;
@@ -33,6 +39,12 @@
     font-size: 1vw!important;
   }
 
+  .mat-badge {
+    position: absolute;
+    margin-top: 1.5rem;
+    margin-left: 3rem;
+  }
+
   .mat-icon {
     height: 2vw;
     width: 2vw;
@@ -41,6 +53,8 @@
   .material-icons {
     font-size: 2vw;
   }
+
+
 
   .mat-cell, .mat-footer-cell {
     font-size: 1.2vw;
@@ -59,6 +73,12 @@
     min-width: 50px!important;
     min-height: 30px;
     font-size: 10px!important;
+  }
+
+  .mat-badge {
+    position: absolute;
+    margin-top: 1.5rem;
+    margin-left: 2rem;
   }
 
   .mat-icon {
@@ -80,11 +100,19 @@
 
 }
 
+/* %%%%%%%%%%%%%%%%%%%% Fuera de los screen %%%%%%%%%%%%%%%%%%%%%%%%% */
 table.mat-table {
   border-spacing: 0;
   width: 80%;
   margin-left: auto;
   margin-right: auto;
+}
+
+
+.mat-badge {
+  position: absolute;
+  margin-top: 1.5rem;
+  margin-left: 2rem;
 }
 
 
