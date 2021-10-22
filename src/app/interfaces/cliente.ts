@@ -2,6 +2,6 @@ export interface Cliente {
   turno?: number;
   nombre: string;
   telefono?: number;
-  tiempo: string;
+  tiempo: number;
   accion: string;
 }

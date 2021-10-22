@@ -12,11 +12,13 @@ import { ModalFormComponent } from './components/modal-form/modal-form.component
 import { ModalButtonComponent } from './components/modal-button/modal-button.component';
 import { NewClientService } from './services/new-client.service';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
+
 
   ],
   imports: [

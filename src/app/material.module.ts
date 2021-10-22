@@ -13,6 +13,7 @@ import { ModalFormComponent } from './components/modal-form/modal-form.component
 import { ReactiveFormsModule } from '@angular/forms'
 import {MatBadgeModule} from '@angular/material/badge';
 import { NewClientService } from './services/new-client.service';
+import { CountdownComponent,FormatTimePipe } from './components/countdown/countdown.component';
 
 
 
@@ -48,6 +49,8 @@ import { NewClientService } from './services/new-client.service';
     TablaClientesComponent,
     ModalButtonComponent,
     ModalFormComponent,
+    CountdownComponent,
+    FormatTimePipe
   ],
   entryComponents: [
   ],
