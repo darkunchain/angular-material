@@ -1,10 +1,9 @@
-import { Component, OnInit, OnDestroy, Input } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input, Output } from '@angular/core';
 import { timer, Subscription } from 'rxjs';
 import { takeWhile } from 'rxjs/operators';
 import { Pipe, PipeTransform } from '@angular/core';
 import { Cliente } from 'src/app/interfaces/cliente';
-import { StateButtonService } from 'src/app/services/state-button.service';
-
+import { BlinkService } from 'src/app/services/blink.service';
 
 
 @Component({
@@ -18,26 +17,30 @@ export class CountdownComponent implements OnInit, OnDestroy {
   countDown: Subscription;
   @Input() counter: number;
   tick = 1000;
-  ClientData:Cliente[] = []
-  @Input() conta:number
-
-
+  blinkStyle: number;
+  @Input() idTimer: number
 
   constructor(
-    private stateButtonService: StateButtonService) {
-
-  }
+    private blinkService: BlinkService) {}
 
 
   ngOnInit() {
-    this.countDown = timer(5000,this.tick)
-    .pipe(takeWhile(x => this.counter > 0)).subscribe(() => --this.counter);
-
+    this.countDown = timer(0,this.tick)
+    .pipe(takeWhile(x => this.counter > 0)).subscribe(() => {
+      --this.counter
+      if(this.counter==0) {
+        this.blinkStyle = this.idTimer;
+        this.blinkService.setBlink(this.blinkStyle)
+      }
+    });
   }
+
+
+
 
   ngOnDestroy() {
     if (this.countDown) this.countDown.unsubscribe();
-    this.stateButtonService.enable();
+
   }
 
 }

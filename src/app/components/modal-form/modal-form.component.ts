@@ -16,7 +16,7 @@ import { NewClientService } from '../../services/new-client.service';
 export class ModalFormComponent implements OnInit {
 
   form: FormGroup;
-  ClientData: Cliente[] = [];
+  ClientData: Cliente;
   counter:number
   contador:number
 
@@ -36,9 +36,6 @@ export class ModalFormComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.newClientService.nuevoClienteObservable.subscribe(response => {
-      this.ClientData = response
-    })
 
   }
 
@@ -47,27 +44,27 @@ export class ModalFormComponent implements OnInit {
   }
 
   min15() {
-    this.form.value.tiempo = 10;
+    this.form.value.tiempo = 15;//900
     this.form.value.accion = 'activo';
-    this.ClientData.push(this.form.value);
+    this.form.value.blink = false;
     this.dialogRef.close(this.form.value);
-    this.newClientService.nuevoCliente(this.ClientData);
+    this.newClientService.nuevoCliente(this.form.value);
   }
 
   min30() {
-    this.form.value.tiempo = 1800;
+    this.form.value.tiempo = 30;//1800
     this.form.value.accion = 'activo';
-    this.ClientData.push(this.form.value);
+    this.form.value.blink = false;
     this.dialogRef.close(this.form.value);
-    this.newClientService.nuevoCliente(this.ClientData);
+    this.newClientService.nuevoCliente(this.form.value);
   }
 
   min60() {
-    this.form.value.tiempo = 3600;
+    this.form.value.tiempo = 60;//3600
     this.form.value.accion = 'activo';
-    this.ClientData.push(this.form.value);
+    this.form.value.blink = false;
     this.dialogRef.close(this.form.value);
-    this.newClientService.nuevoCliente(this.ClientData);
+    this.newClientService.nuevoCliente(this.form.value);
   }
 
 }

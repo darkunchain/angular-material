@@ -4,4 +4,6 @@ export interface Cliente {
   telefono?: number;
   tiempo: number;
   accion: string;
+  blink: Boolean;
+  createdAt?: Date | String;
 }

@@ -8,7 +8,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr mdbTableCol *ngFor="let el of dataSource">
+    <tr *ngFor="let el of dataSource; let i = index" [ngClass]="{'blink':el.blink}" mdbTableCol >
       <td
         matBadge="{{ el.turno }}"
         matBadgePosition="below before"
@@ -16,15 +16,25 @@
       </td>
       <td>{{ el.nombre }}</td>
       <td>{{ el.telefono }}</td>
-      <td><app-countdown [counter] = "el.tiempo"></app-countdown></td>
+      <td><app-countdown [counter] = "el.tiempo" [idTimer] = "i"></app-countdown></td>
       <td>
-        <button mat-flat-button color="warn" class="small-btn" *ngIf="!stateButtonService.isActive" color="info" disabled>
+        <button mat-flat-button color="primary" [ngClass]="{'small-btn':true,'btnChange':el.blink}" [disabled] = "!el.blink" (click)="sendReg(i,el.turno)">
           <mat-icon aria-hidden="false" aria-label="Example home icon"
             >hourglass_bottom</mat-icon>
           Fin
         </button>
       </td>
     </tr>
+    <tr>
+      <td>
+        <button mat-flat-button color="primary"  (click)="obtenerRegistros()">
+          <mat-icon aria-hidden="false" aria-label="Example home icon"
+            >hourglass_bottom</mat-icon>
+          Fin
+        </button>
+      </td>
+    </tr>
+
   </tbody>
 </table>
 

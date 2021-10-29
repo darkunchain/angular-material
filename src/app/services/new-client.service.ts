@@ -1,5 +1,4 @@
-import { NullTemplateVisitor } from '@angular/compiler';
-import { Injectable, Input, Output } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { Cliente } from '../interfaces/cliente';
 
@@ -8,16 +7,14 @@ import { Cliente } from '../interfaces/cliente';
 })
 export class NewClientService {
 
-  ClientData: Cliente[] = [];
+  ClientData: Cliente;
 
-  private nuevoClienteSubject = new Subject<Cliente[]>();
+  private nuevoClienteSubject = new Subject<Cliente>();
   nuevoClienteObservable = this.nuevoClienteSubject.asObservable();
 
-  nuevoCliente(Cliente: Cliente[]) {
+  nuevoCliente(Cliente: Cliente) {
     this.ClientData = Cliente;
     this.nuevoClienteSubject.next(Cliente)
   }
-
-
 
 }

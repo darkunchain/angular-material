@@ -12,7 +12,7 @@ import { Cliente } from '../../interfaces/cliente';
 export class ModalButtonComponent {
 
 
-  newCliente: Cliente[] = [];
+
 
 
   constructor(public dialog: MatDialog) { }
@@ -28,11 +28,7 @@ export class ModalButtonComponent {
     const dialogRef = this.dialog.open(ModalFormComponent, dialogConfig);
 
     dialogRef.afterClosed().subscribe(
-      data => console.log("Dialog output:", data)
+      data => console.log("Dialogo cerrado:")
     );
   }
-
-
-
-
 }

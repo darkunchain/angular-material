@@ -1,6 +1,8 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
 import { Cliente } from 'src/app/interfaces/cliente';
-import { StateButtonService } from 'src/app/services/state-button.service';
+import { BlinkService } from 'src/app/services/blink.service';
+import { SendDataService } from 'src/app/services/send-data.service';
+import { TurnoService } from 'src/app/services/turno.service';
 import { NewClientService } from '../../services/new-client.service';
 
 
@@ -16,27 +18,65 @@ import { NewClientService } from '../../services/new-client.service';
 
 export class TablaClientesComponent implements OnInit {
 
-  ClientData: Cliente[] = [];
+  ClientData: Cliente;
   arrayCliente: Cliente[] = [];
   displayedColumns: string[] = ['turno', 'nombre', 'telefono', 'tiempo', 'accion'];
   dataSource: Cliente[] = [];
   counter: number
+  idTimer: number
+  dato: Cliente
+  current: Date
+
 
   constructor(
     private newClientService: NewClientService,
-    public stateButtonService: StateButtonService) {
-
-    this.newClientService.nuevoClienteObservable.subscribe(response => {
-      this.ClientData = response
-      this.ClientData[0].turno = this.dataSource.length + 1;
-      this.dataSource.push(this.ClientData[0]);
-    })
-  }
+    private blinkService: BlinkService,
+    private sendDataService:SendDataService,
+    private turnoService:TurnoService) {}
 
   ngOnInit() {
 
+    this.newClientService.nuevoClienteObservable.subscribe(response => {
+
+      this.ClientData = response
+      this.ClientData.turno = this.turnoService.asignaT()
+      this.turnoService.setAsignacion(this.ClientData.turno - 1)
+      this.dataSource.push(this.ClientData);
+
+      this.blinkService.getBlinkId$().subscribe(IdBlinkFS => {
+        this.dataSource[IdBlinkFS].blink = true
+      })
+    })
+
+
+
   }
 
+  sendReg(index:number,elturno:any) {
+    this.dato = this.dataSource[index]
+    const turno = this.dato.turno
+    this.turnoService.noAsignacion(elturno - 1)
+    this.dato.accion = 'inactivo'
+    this.dato.blink = false
+    this.dato.createdAt = new Date().toLocaleString('es-CO')
+    this.sendDataService.postClient(this.dato).subscribe(data => {
+
+    },error => {
+
+    })
+    this.dataSource.splice(index, 1)
+  }
+
+  asignarTurno(){
+    let data = this.turnoService.asignaT()
+  }
+
+  obtenerRegistros(){
+    this.sendDataService.getRegistros().subscribe(datos =>{
+      console.log('Registros: ', datos)
+    })
+
+  }
 
 
 
