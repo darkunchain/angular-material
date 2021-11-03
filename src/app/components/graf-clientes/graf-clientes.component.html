@@ -1,0 +1,85 @@
+
+<div class="container mt-6">
+  <div class="row align-items-center">
+    <div class="col">
+      <mat-progress-spinner
+        class="spinbar"
+        [color]="color"
+        [mode]="mode"
+        [value]="valueDia"
+      >
+      </mat-progress-spinner>
+      <div class="spin">
+        <h1>{{ numDia }}</h1>
+      </div>
+    </div>
+
+    <div class="col">
+      <mat-progress-spinner
+        class="spinbar"
+        [color]="color"
+        [mode]="mode"
+        [value]="valueSem"
+      >
+      </mat-progress-spinner>
+      <div class="spin">
+        <h1>{{ numSem }}</h1>
+      </div>
+    </div>
+
+    <div class="col">
+      <div>
+        <mat-progress-spinner
+          class="spinbar"
+          [color]="color"
+          [mode]="mode"
+          [value]="valueMes"
+        >
+        </mat-progress-spinner>
+        <div class="spin">
+          <h1>{{ numMes }}</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row align-items-center">
+    <div class="col">
+      <div class="cylinder">
+        <div [ngClass]= "'water--' + perDia">
+          <div class="water"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="cylinder">
+        <div [ngClass]= "'water--' + perSem">
+          <div class="water"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="cylinder">
+        <div [ngClass]= "'water--' + perMes">
+          <div class="water"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <h2>día</h2>
+    </div>
+
+    <div class="col">
+      <h2>Semana</h2>
+    </div>
+
+    <div class="col">
+      <h2>Mes</h2>
+    </div>
+  </div>
+</div>

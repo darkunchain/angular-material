@@ -15,14 +15,14 @@ export class SendDataService {
 
   postClient(cliente:Cliente){
     return this.http.post<any>(
-      '/api/add',
+      'http://localhost:3000/api/add',
       cliente,
       { headers:this.headers }
       )
   }
 
   getRegistros():Observable<Cliente[]> {
-    return this.http.get<Cliente[]>('/api/registros')
+    return this.http.get<Cliente[]>('http://localhost:3000/api/registros')
 
   }
 
