@@ -16,8 +16,7 @@ export class SendDataService {
   postClient(cliente:Cliente){
     return this.http.post<any>(
       'http://app.remicos.com.co:8081/api/add',
-      cliente,
-      { headers:this.headers }
+      cliente
       )
   }
 
