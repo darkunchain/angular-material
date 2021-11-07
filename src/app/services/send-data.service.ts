@@ -8,9 +8,9 @@ import { Observable } from 'rxjs';
 })
 export class SendDataService {
 
-  headers = { 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTBjMDY2NDcwMTc2N2U3M2JjMDRlZTgiLCJpYXQiOjE2MzQ5NTI4ODMsImV4cCI6MTYzNDk5NjA4M30.YP7lyWk94ale27o4ygD9Mr37f6XvIFhE3_8hGJqaWvo',
+  /* headers = { 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTBjMDY2NDcwMTc2N2U3M2JjMDRlZTgiLCJpYXQiOjE2MzQ5NTI4ODMsImV4cCI6MTYzNDk5NjA4M30.YP7lyWk94ale27o4ygD9Mr37f6XvIFhE3_8hGJqaWvo',
    'My-Custom-Header': 'foobar' };
-
+ */
   constructor(private http: HttpClient) { }
 
   postClient(cliente:Cliente){
