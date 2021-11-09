@@ -11,6 +11,8 @@ import { Cliente } from '../../interfaces/cliente';
 })
 export class ModalButtonComponent {
 
+  todayDate : Date = new Date();
+
 
 
 
