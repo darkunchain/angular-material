@@ -5,6 +5,7 @@ import { TablaClientesComponent } from './components/tabla-clientes/tabla-client
 
 const routes: Routes = [
 
+  {path: '', component: TablaClientesComponent},
   {path: 'tablaClientes', component: TablaClientesComponent},
   {path: 'grafClientes', component: GrafClientesComponent},
 
