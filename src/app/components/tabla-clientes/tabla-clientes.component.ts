@@ -42,7 +42,6 @@ export class TablaClientesComponent implements OnInit {
       this.ClientData.turno = this.turnoService.asignaT()
       this.turnoService.setAsignacion(this.ClientData.turno - 1)
       this.dataSource.push(this.ClientData);
-
       this.blinkService.getBlinkId$().subscribe(IdBlinkFS => {
         this.dataSource[IdBlinkFS].blink = true
       })

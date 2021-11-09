@@ -6,5 +6,5 @@ export interface Cliente {
   accion: string;
   blink: Boolean;
   createdAt?: Date | String;
-  isoDate: Date
+  isoDate: Date;
 }
