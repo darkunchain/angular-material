@@ -106,7 +106,12 @@ export class GrafClientesComponent implements OnInit {
       this.perMes = 100;
     }
 
-
+    this.datosGrafService.getDatos$().subscribe(datos => {
+      console.log('datos_finales: ', datos.contMesAct)
+      this.numDia = datos.contHoy
+      this.numSem = datos.contSemAct
+      this.numMes = datos.contMesAct
+    })
 
 
 

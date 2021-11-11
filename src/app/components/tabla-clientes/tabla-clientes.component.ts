@@ -38,6 +38,11 @@ export class TablaClientesComponent implements OnInit {
 
   ngOnInit() {
 
+    this.sendDataService.getRegistros().subscribe(datos =>{
+      console.log('Registros: ', datos)
+      this.datosGrafService.datosBackShare(datos)
+    })
+
     this.newClientService.nuevoClienteObservable.subscribe(response => {
 
       this.ClientData = response
@@ -67,6 +72,13 @@ export class TablaClientesComponent implements OnInit {
 
     })
     this.dataSource.splice(index, 1)
+
+    this.sendDataService.getRegistros().subscribe(datos =>{
+      console.log('Registros: ', datos)
+      this.datosGrafService.datosBackShare(datos)
+    })
+
+
   }
 
   asignarTurno(){
