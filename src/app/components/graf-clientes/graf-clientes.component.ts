@@ -32,6 +32,7 @@ export class GrafClientesComponent implements OnInit {
 
 
   ngOnInit(): void {
+    console.log('valuedia: ', this.valueDia, 'valueSem: ', this.valueSem,'valuemes: ', this.valueMes)
     if(this.valueDia < 10){
       this.perDia = 5;
     }else if(10 < this.valueDia && this.valueDia < 20){
