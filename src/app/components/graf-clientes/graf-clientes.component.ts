@@ -13,9 +13,9 @@ export class GrafClientesComponent implements OnInit {
 
   color: ThemePalette = 'primary';
   mode: ProgressSpinnerMode = 'determinate';
-  numDia:number = 10
-  numSem:number = 80
-  numMes:number = 80
+  numDia:number = 0
+  numSem:number = 0
+  numMes:number = 0
   valueDia:number = (this.numDia*100)/30;
   valueSem:number = (this.numSem*100)/210;
   valueMes:number = (this.numMes*100)/900;
