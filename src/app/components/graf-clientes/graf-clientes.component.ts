@@ -13,9 +13,9 @@ export class GrafClientesComponent implements OnInit {
 
   color: ThemePalette = 'primary';
   mode: ProgressSpinnerMode = 'determinate';
-  numDia:number = 0
-  numSem:number = 0
-  numMes:number = 0
+  numDia:number = 1
+  numSem:number = 1
+  numMes:number = 1
   valueDia:number = (this.numDia*100)/30;
   valueSem:number = (this.numSem*100)/210;
   valueMes:number = (this.numMes*100)/900;
@@ -32,7 +32,15 @@ export class GrafClientesComponent implements OnInit {
 
 
   ngOnInit(): void {
-    console.log('valuedia: ', this.valueDia, 'valueSem: ', this.valueSem,'valuemes: ', this.valueMes)
+    this.datosGrafService.getDatos$().subscribe(datos => {
+      console.log('datos_finales: ', datos.contMesAct)
+      this.numDia = datos.contHoy
+      this.numSem = datos.contSemAct
+      this.numMes = datos.contMesAct
+    })
+
+
+
     if(this.valueDia < 10){
       this.perDia = 5;
     }else if(10 < this.valueDia && this.valueDia < 20){
@@ -106,14 +114,6 @@ export class GrafClientesComponent implements OnInit {
     }else if(this.valueMes > 100){
       this.perMes = 100;
     }
-
-    this.datosGrafService.getDatos$().subscribe(datos => {
-      console.log('datos_finales: ', datos.contMesAct)
-      this.numDia = datos.contHoy
-      this.numSem = datos.contSemAct
-      this.numMes = datos.contMesAct
-    })
-
 
 
   }
