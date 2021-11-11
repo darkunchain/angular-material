@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
 import { Cliente } from 'src/app/interfaces/cliente';
 import { BlinkService } from 'src/app/services/blink.service';
+import { DatosGrafService } from 'src/app/services/datos-graf.service';
 import { SendDataService } from 'src/app/services/send-data.service';
 import { TurnoService } from 'src/app/services/turno.service';
 import { NewClientService } from '../../services/new-client.service';
@@ -32,6 +33,7 @@ export class TablaClientesComponent implements OnInit {
     private newClientService: NewClientService,
     private blinkService: BlinkService,
     private sendDataService:SendDataService,
+    private datosGrafService:DatosGrafService,
     private turnoService:TurnoService) {}
 
   ngOnInit() {
@@ -74,6 +76,7 @@ export class TablaClientesComponent implements OnInit {
   obtenerRegistros(){
     this.sendDataService.getRegistros().subscribe(datos =>{
       console.log('Registros: ', datos)
+      this.datosGrafService.datosBackShare(datos)
     })
 
   }

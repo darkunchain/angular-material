@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {ThemePalette} from '@angular/material/core';
 import {ProgressSpinnerMode} from '@angular/material/progress-spinner';
+import { DatosGrafService } from 'src/app/services/datos-graf.service';
+
 
 @Component({
   selector: 'app-graf-clientes',
@@ -24,7 +26,10 @@ export class GrafClientesComponent implements OnInit {
 
 
 
-  constructor() { }
+  constructor(private datosGrafService:DatosGrafService) { }
+
+
+
 
   ngOnInit(): void {
     if(this.valueDia < 10){
@@ -100,6 +105,9 @@ export class GrafClientesComponent implements OnInit {
     }else if(this.valueMes > 100){
       this.perMes = 100;
     }
+
+
+
 
 
   }
