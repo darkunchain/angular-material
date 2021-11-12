@@ -40,9 +40,39 @@
       }
     }
   });
+
+  //%%%%%%%%%%%%%%%%%%%%%%%% posicion del tooltip todas las graficas%%%%%%%%%%%%%%%%%%%%%%%//
+  Chart.Tooltip.positioners.todas = function(elements, eventPosition) {
+
+        var tooltip = this;
+        if (!elements.length) {
+        return false;
+        }
+        var i, len;
+        var x = 0;
+        var y = 0;
+        var count = 0;
+        for (i = 0, len = elements.length; i < len; ++i) {
+        var el = elements[i];
+        if (el && el.hasValue()) {
+            var pos = el.tooltipPosition();
+            x += pos.x;
+            y += pos.y + 14;
+            ++count;
+        }
+        }
+        return {
+        x: Math.round(x / count),
+        y: Math.round(y / count)
+        };
+    }
+
+
+
+
 </script>
 
-
+<hr>
 <div class="container">
   <div class="row">
     <canvas
