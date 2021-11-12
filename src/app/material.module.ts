@@ -16,6 +16,7 @@ import { NewClientService } from './services/new-client.service';
 import { CountdownComponent,FormatTimePipe } from './components/countdown/countdown.component';
 import { GrafClientesComponent } from './components/graf-clientes/graf-clientes.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { GrafDiasActComponent } from './components/graf-dias-act/graf-dias-act.component';
 
 
 
@@ -56,7 +57,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     ModalFormComponent,
     CountdownComponent,
     FormatTimePipe,
-    GrafClientesComponent
+    GrafClientesComponent,
+    GrafDiasActComponent
   ],
   entryComponents: [
   ],

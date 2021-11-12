@@ -12,8 +12,7 @@ input {
   margin: 0 auto;
   margin-top: -5rem;
   margin-bottom: auto;
-  margin-left: 4rem;
-  margin-right: auto;
+  margin-left: 0.8rem;
   position: absolute;
   z-index: 1;
 }
@@ -27,9 +26,9 @@ input {
 	position: relative;
 	overflow: hidden;
 	margin: 0 auto;
-	width: 100px;
-	height: 300px;
-	border-radius: 50px/25px;
+	width: 10vw;
+	height: 30vw;
+	border-radius: 5vw/2.5vw;
 	background-color: rgba(156, 151, 151, 0.5);
 }
 
@@ -37,9 +36,9 @@ input {
 	position: absolute;
 	left: 0;
 	top: 0;
-	width: 100px;
-	height: 50px;
-	border-radius: 50px/25px;
+	width: 10vw;
+	height: 5vw;
+	border-radius: 5vw/2.5vw;
 	background-color: rgba(56, 56, 56, 0.5);
 	content: '';
 }
@@ -48,9 +47,9 @@ input {
 	position: absolute;
 	left: 0;
 	bottom: 0;
-	width: 100px;
-	height: 50px;
-	border-radius: 50px/25px;
+	width: 10vw;
+	height: 5vw;
+	border-radius: 5vw/2.5vw;
 	background-color: rgba(148, 145, 145, 0.4);
 	content: '';
 }
@@ -59,10 +58,10 @@ input {
 	position: absolute;
 	left: 0;
 	bottom: 0;
-	width: 100px;
+	width: 10vw;
 	height: 0;
-	padding-top: 50px;/* alto del agua */
-	border-radius: 50px/25px;
+	padding-top: 5vw;/* alto del agua */
+	border-radius: 5vw/2.5vw;
 	background-color: rgba(0, 160, 160, 0.5);
 	transition: 0.3s linear;
 }
@@ -71,9 +70,9 @@ input {
 	position: absolute;
 	left: 0;
 	top: 0;
-	width: 100px;
-	height: 50px;
-	border-radius: 50px/25px;
+	width: 10vw;
+	height: 5vw;
+	border-radius: 5vw/2.5vw;
 	background-color: rgba(3, 65, 65, 0.2);
 	content: '';
 }
@@ -82,9 +81,9 @@ input {
 	position: absolute;
 	left: 0;
 	bottom: 0;
-	width: 100px;
-	height: 50px;
-	border-radius: 50px/25px;
+	width: 10vw;
+	height: 5vw;
+	border-radius: 5vw/2.5vw;
 	background-color: rgba(0, 25, 26, 0.4);
 	content: '';
 }
@@ -96,47 +95,47 @@ input {
 }
 
 .cylinder .water--5 .water {
-	height: calc(250px * 0.25);
+	height: calc(25vw * 0.1);
 }
 
 .cylinder .water--10 .water {
-	height: calc(250px * 0.3);
+	height: calc(25vw * 0.12);
 }
 
 .cylinder .water--20 .water {
-	height: calc(250px * 0.4);
+	height: calc(25vw * 0.2);
 }
 
 .cylinder .water--30 .water {
-	height: calc(250px * 0.5);
+	height: calc(25vw * 0.3);
 }
 
 .cylinder .water--40 .water {
-	height: calc(250px * 0.6);
+	height: calc(25vw * 0.4);
 }
 
 .cylinder .water--50 .water {
-	height: calc(250px * 0.7);
+	height: calc(25vw * 0.5);
 }
 
 .cylinder .water--60 .water {
-	height: calc(250px * 0.8);
+	height: calc(25vw * 0.6);
 }
 
 .cylinder .water--70 .water {
-	height: calc(250px * 0.85);
+	height: calc(25vw * 0.7);
 }
 
 .cylinder .water--80 .water {
-	height: calc(250px * 0.9);
+	height: calc(25vw * 0.8);
 }
 
 .cylinder .water--90 .water {
-	height: calc(250px * 0.95);
+	height: calc(25vw * 0.95);
 }
 
 .cylinder .water--100 .water {
-	height: calc(250px * 1);
+	height: calc(25vw * 1);
 }
 
 
@@ -166,8 +165,8 @@ input {
 
   .spin {
     margin: auto;
-    position: fixed;
-    margin-left: 5.5rem;
+    position: relative;
+    margin-left: 2rem;
     margin-top: -3rem;
   }
 }
@@ -178,8 +177,8 @@ input {
 
   .spin {
     margin: auto;
-    position: fixed;
-    margin-left: 5.5rem;
+    position: relative;
+    margin-left: 1rem;
     margin-top: -3rem;
   }
 }
@@ -190,8 +189,8 @@ input {
 
   .spin {
     margin: auto;
-    position: fixed;
-    margin-left: 5.5rem;
+    position: relative;
+    margin-left: -1rem;
     margin-top: -3rem;
   }
 }
@@ -202,8 +201,8 @@ input {
 
   .spin {
     margin: auto;
-    position: fixed;
-    margin-left: 5.5rem;
+    position: relative;
+    margin-left: -2rem;
     margin-top: -3rem;
   }
 }
@@ -214,7 +213,7 @@ input {
 
   .spin {
     margin: auto;
-    position: absolute;
+    position: relative;
     margin-left: 6rem;
     margin-top: -3rem;
   }

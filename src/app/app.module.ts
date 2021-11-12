@@ -11,6 +11,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ModalFormComponent } from './components/modal-form/modal-form.component';
 import { ModalButtonComponent } from './components/modal-button/modal-button.component';
 import { NewClientService } from './services/new-client.service';
+import { ChartsModule } from 'ng2-charts';
+import { ChartDiasActComponent } from './components/chart-dias-act/chart-dias-act.component';
 
 
 @NgModule({
@@ -18,15 +20,15 @@ import { NewClientService } from './services/new-client.service';
     AppComponent,
     HeaderComponent,
     FooterComponent,
-
-
+    ChartDiasActComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    ChartsModule
   ],
   providers: [NewClientService],
   bootstrap: [AppComponent],
