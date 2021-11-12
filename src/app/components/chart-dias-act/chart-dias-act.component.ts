@@ -55,6 +55,11 @@ export class ChartDiasActComponent implements OnInit {
   public ch3barChartOptions: ChartOptions = {responsive: true};
   public ch3barChartLabels: Label[] = ['Domingo', 'Lunes', 'Martes', 'Miercoles',
   'Jueves', 'Viernes', 'Sabado'];
+  public ch3barChartBackground:Label[] = [
+    'rgba(255, 99, 132, 0.4)', 'rgba(54, 162, 235, 0.6)', 'rgba(255, 206, 86, 0.8)',
+    'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)',
+    'rgba(255, 99, 132, 0.2)'
+  ]
   public ch3barChartType: ChartType = 'bar';
   public ch3barChartLegend = true;
   public ch3barChartPlugins = [];
@@ -72,11 +77,13 @@ export class ChartDiasActComponent implements OnInit {
       }]
       this.ch2barChartData = [{
         data: datos.perMes,
-        label: 'mes'
+        label: 'mes',
+        backgroundColor: this.ch2barChartBackground
       }]
       this.ch3barChartData = [{
         data: datos.perDiaSemMesAct,
-        label: 'Día de la semana'
+        label: 'Día de la semana',
+        backgroundColor: this.ch3barChartBackground
       }]
     })
 
