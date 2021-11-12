@@ -39,6 +39,12 @@ export class ChartDiasActComponent implements OnInit {
   public ch2barChartOptions: ChartOptions = {responsive: true};
   public ch2barChartLabels: Label[] = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio',
   'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+  public ch2barChartBackground:Label[] = [
+    'rgba(255, 99, 132, 0.4)', 'rgba(54, 162, 235, 0.6)', 'rgba(255, 206, 86, 0.8)',
+    'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)',
+    'rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)',
+    'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)'
+  ]
   public ch2barChartType: ChartType = 'bar';
   public ch2barChartLegend = true;
   public ch2barChartPlugins = [];
