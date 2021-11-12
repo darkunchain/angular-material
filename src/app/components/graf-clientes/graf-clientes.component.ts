@@ -16,7 +16,7 @@ export class GrafClientesComponent implements OnInit {
   numDia:number = 1
   numSem:number = 1
   numMes:number = 1
- valueDia:number = (this.numDia*100)/30;
+  valueDia:number = (this.numDia*100)/30;
   valueSem:number = (this.numSem*100)/210;
   valueMes:number = (this.numMes*100)/900;
   perDia:number = 0
