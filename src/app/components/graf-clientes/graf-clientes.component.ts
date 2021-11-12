@@ -22,6 +22,7 @@ export class GrafClientesComponent implements OnInit {
   perDia:number = 0
   perSem:number = 0
   perMes:number = 0
+  fecha:Date
 
 
 
@@ -37,6 +38,10 @@ export class GrafClientesComponent implements OnInit {
       this.numDia = datos.contHoy
       this.numSem = datos.contSemAct
       this.numMes = datos.contMesAct
+      this.fecha = new Date("<YYYY-mm-ddTHH:MM:ssZ>")
+      console.log('this.fecha',this.fecha)
+
+
 
     })
 

@@ -1,14 +1,42 @@
-<div class="container" >
-  <div style="display: block;">
-    <canvas baseChart
-      [datasets]="this.barChartData"
-      [labels]="barChartLabels"
-      [options]="barChartOptions"
-      [plugins]="barChartPlugins"
-      [legend]="barChartLegend"
-      [chartType]="barChartType">
+<div class="container">
+  <div class="row">
+    <canvas
+      baseChart
+      [datasets]="this.ch1barChartData"
+      [labels]="ch1barChartLabels"
+      [options]="ch1barChartOptions"
+      [plugins]="ch1barChartPlugins"
+      [legend]="ch1barChartLegend"
+      [chartType]="ch1barChartType"
+    >
     </canvas>
   </div>
+
+  <div class="row">
+    <div class="col-6">
+      <canvas
+        baseChart
+        [datasets]="this.ch2barChartData"
+        [labels]="ch2barChartLabels"
+        [options]="ch2barChartOptions"
+        [plugins]="ch2barChartPlugins"
+        [legend]="ch2barChartLegend"
+        [chartType]="ch2barChartType"
+      >
+      </canvas>
+    </div>
+
+    <div class="col-6">
+      <canvas
+        baseChart
+        [datasets]="this.ch3barChartData"
+        [labels]="ch3barChartLabels"
+        [options]="ch3barChartOptions"
+        [plugins]="ch3barChartPlugins"
+        [legend]="ch3barChartLegend"
+        [chartType]="ch3barChartType"
+      >
+      </canvas>
+    </div>
+  </div>
 </div>
-
-
