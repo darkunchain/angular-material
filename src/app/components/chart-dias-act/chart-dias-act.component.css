@@ -14,7 +14,7 @@
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   margin-top: calc(var(--bs-gutter-y) * -1);
   margin-right: calc(var(--bs-gutter-x) * -.5);
   margin-left: calc(var(--bs-gutter-x) * -.5);
@@ -30,9 +30,28 @@
 
 
 canvas {
-  display: flex;
-  height: 242px;
-  width: 485px;
+  display: flex!important;
+  height: 100%;
+  width: 100%!important;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: nowrap!important;
 }
+
+
+table {
+  table-layout: fixed;
+  width: 40vw;
+}
+.tg  {border-collapse:collapse;border-color:#aabcfe;border-spacing:0;}
+.tg td{background-color:#e8edff;border-bottom-width:1px;border-color:#aabcfe;border-style:solid;border-top-width:1px;
+  border-width:0px;color:#669;font-family:Arial, sans-serif;font-size:11px;overflow:hidden;padding:10px 5px;
+  word-break:normal;}
+.tg th{background-color:#b9c9fe;border-bottom-width:1px;border-color:#aabcfe;border-style:solid;border-top-width:1px;
+  border-width:0px;color:#039;font-family:Arial, sans-serif;font-size:11px;font-weight:normal;overflow:hidden;
+  padding:10px 5px;word-break:normal;}
+.tg .tg-phtq{background-color:#D2E4FC;border-color:inherit;text-align:left;vertical-align:middle}
+.tg .tg-7btt{border-color:inherit;font-weight:bold;text-align:center;vertical-align:middle}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:middle}
+.tg .tg-0lax{text-align:left;vertical-align:middle}
+.tg .tg-fer{border-color:inherit;text-align:center;vertical-align:middle}
+.tg .tg-ferr{border-color:inherit;text-align:right;vertical-align:middle}

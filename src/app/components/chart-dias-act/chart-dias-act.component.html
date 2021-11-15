@@ -1,22 +1,26 @@
-
 <script>
-//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%//
-//%%%%%%%%%%%%%%%%%%%%%%%% Funciones %%%%%%%%%%%%%%%%%%%%%%%//
-//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%//
-//%%%%%%%%%%%%%%%%%%%%%%%% Mostrar tooltips siempre %%%%%%%%%%%%%%%%%%%%%%%//
+  //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%//
+  //%%%%%%%%%%%%%%%%%%%%%%%% Funciones %%%%%%%%%%%%%%%%%%%%%%%//
+  //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%//
+  //%%%%%%%%%%%%%%%%%%%%%%%% Mostrar tooltips siempre %%%%%%%%%%%%%%%%%%%%%%%//
   Chart.pluginService.register({
     beforeRender: function (chart) {
       if (chart.config.options.showAllTooltips) {
         chart.pluginTooltips = [];
         chart.config.data.datasets.forEach(function (dataset, i) {
           chart.getDatasetMeta(i).data.forEach(function (sector, j) {
-            chart.pluginTooltips.push(new Chart.Tooltip({
-              _chart: chart.chart,
-              _chartInstance: chart,
-              _data: chart.data,
-              _options: chart.options.tooltips,
-              _active: [sector]
-            }, chart));
+            chart.pluginTooltips.push(
+              new Chart.Tooltip(
+                {
+                  _chart: chart.chart,
+                  _chartInstance: chart,
+                  _data: chart.data,
+                  _options: chart.options.tooltips,
+                  _active: [sector],
+                },
+                chart
+              )
+            );
           });
         });
         chart.options.tooltips.enabled = false;
@@ -25,8 +29,7 @@
     afterDraw: function (chart, easing) {
       if (chart.config.options.showAllTooltips) {
         if (!chart.allTooltipsOnce) {
-          if (easing !== 1)
-            return;
+          if (easing !== 1) return;
           chart.allTooltipsOnce = true;
         }
         chart.options.tooltips.enabled = true;
@@ -38,41 +41,36 @@
         });
         chart.options.tooltips.enabled = false;
       }
-    }
+    },
   });
 
   //%%%%%%%%%%%%%%%%%%%%%%%% posicion del tooltip todas las graficas%%%%%%%%%%%%%%%%%%%%%%%//
-  Chart.Tooltip.positioners.todas = function(elements, eventPosition) {
-
-        var tooltip = this;
-        if (!elements.length) {
-        return false;
-        }
-        var i, len;
-        var x = 0;
-        var y = 0;
-        var count = 0;
-        for (i = 0, len = elements.length; i < len; ++i) {
-        var el = elements[i];
-        if (el && el.hasValue()) {
-            var pos = el.tooltipPosition();
-            x += pos.x;
-            y += pos.y + 14;
-            ++count;
-        }
-        }
-        return {
-        x: Math.round(x / count),
-        y: Math.round(y / count)
-        };
+  Chart.Tooltip.positioners.todas = function (elements, eventPosition) {
+    var tooltip = this;
+    if (!elements.length) {
+      return false;
     }
-
-
-
-
+    var i, len;
+    var x = 0;
+    var y = 0;
+    var count = 0;
+    for (i = 0, len = elements.length; i < len; ++i) {
+      var el = elements[i];
+      if (el && el.hasValue()) {
+        var pos = el.tooltipPosition();
+        x += pos.x;
+        y += pos.y + 14;
+        ++count;
+      }
+    }
+    return {
+      x: Math.round(x / count),
+      y: Math.round(y / count),
+    };
+  };
 </script>
 
-<hr>
+<hr />
 <div class="container">
   <div class="row">
     <canvas
@@ -86,7 +84,7 @@
     >
     </canvas>
   </div>
-
+<hr>
   <div class="row">
     <div class="col-6">
       <canvas
@@ -112,6 +110,57 @@
         [chartType]="ch3barChartType"
       >
       </canvas>
+    </div>
+  </div>
+<hr>
+  <div class="row">
+    <div class="col-6">
+
+          <canvas
+            baseChart
+            [datasets]="this.ch4pieChartData"
+            [labels]="ch4pieChartLabels"
+            [options]="ch4pieChartOptions"
+            [plugins]="ch4pieChartPlugins"
+            [legend]="ch4pieChartLegend"
+            [chartType]="ch4pieChartType"
+          >
+          </canvas>
+
+    </div>
+
+    <div class="col-6">
+      <table class="tg">
+        <thead>
+          <tr>
+            <th class="tg-7btt">Tiempo</th>
+            <th class="tg-7btt">Clientes</th>
+            <th class="tg-7btt">Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="tg-phtq">15 minutos</td>
+            <td class="tg-fer">{{ this.Clientes15 }}</td>
+            <td class="tg-ferr">{{ this.Clientes15T }}</td>
+          </tr>
+          <tr>
+            <td class="tg-0pky">30 minutos</td>
+            <td class="tg-fer">{{ this.Clientes30 }}</td>
+            <td class="tg-ferr">{{ this.Clientes30T }}</td>
+          </tr>
+          <tr>
+            <td class="tg-phtq">1 Hora</td>
+            <td class="tg-fer">{{ this.Clientes60 }}</td>
+            <td class="tg-ferr">{{ this.Clientes60T }}</td>
+          </tr>
+          <tr>
+            <td class="tg-0lax"></td>
+            <td class="tg-0lax">Total</td>
+            <td class="tg-0lax">{{ this.total }}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
